@@ -1,6 +1,6 @@
 # Documentation - External Monitoring
 
-In this documentation You learn how to set up an external monitoring on Microsoft Azure Container Instances with the help of the three containers: InfluxDB, Telegraf and Traefik . InfluxDB is an open-source time series database, that we use to display data gathered by Telegraf, an open-source plugin-driven server agent for collecting and reporting metrices from databases and systems. Additionally, we use Traefik as HTTP reverse proxy and load balancer, which automatically issues and synchronizes Let's Encrypt certificates.
+In this documentation you learn how to set up an external monitoring on Microsoft Azure Container Instances with the help of the three containers: InfluxDB, Telegraf and Traefik . InfluxDB is an open-source time series database, that we use to display data gathered by Telegraf, an open-source plugin-driven server agent for collecting and reporting metrices from databases and systems. Additionally, we use Traefik as HTTP reverse proxy and load balancer, which automatically issues and synchronizes Let's Encrypt certificates.
 
 At first, we make sure that we set up the right environment in Microsoft Azure. Next, we consider how to deploy a container group and what the used JSONC file used should to look like. Finally, we take a closer look at Traefik’s configuration files.
 
@@ -38,14 +38,14 @@ Review and create the storage account.
 
 ![P7](./Screenshots/Capture7.1.PNG)
 
-After Your deployment is complete, press “Go to resource” and select “File shares” to create a new file share.
+After your deployment is complete, press “Go to resource” and select “File shares” to create a new file share.
 
 <p float="left">
     <img src="./Screenshots/Capture8.PNG" width="320"/>
     <img src="./Screenshots/Capture9.PNG" width="283"/>
     </p>
 
-Choose a name for the new file share and select a resource group. Click the button “Review + create” and after passed validation the new file share is created. We first create the file share “influxdbfileshare”, where the files for the InfluxDB container are stored. For that open the file share and upload the files: “influxd.bolt” and “influx.sqlite”. You find these files in the file directory on Your computer in the folder “InfluxData”.
+Choose a name for the new file share and select a resource group. Click the button “Review + create” and after passed validation the new file share is created. We first create the file share “influxdbfileshare”, where the files for the InfluxDB container are stored. For that open the file share and upload the files: “influxd.bolt” and “influx.sqlite”. You find these files in the file directory on your computer in the folder “InfluxData”.
 
 ![P10](./Screenshots/Capture10.PNG)
 
@@ -118,7 +118,7 @@ In the static configuration we could also enable the logs, the api and the dashb
 
 Finally, we consider the dynamic configuration:
 
-![P34](./Screenshots/Capture34.PNG)
+![P34](./Screenshots/Capture34.1.PNG)
 
 We define a router “influxdb-ssl-router” with the entry point port 443, rule "host(``*insert your url here*`)" and the service "influxdb-service", which is defined below.
 Now everything is set up so that the external monitoring should work.
