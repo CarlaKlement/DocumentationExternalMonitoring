@@ -120,5 +120,5 @@ Finally, we consider the dynamic configuration:
 
 ![P34](./Screenshots/Capture34.1.PNG)
 
-We define a router “influxdb-ssl-router” with the entry point port 443, rule "host(``*insert your url here*`)" and the service "influxdb-service", which is defined below.
+We define a router “influxdb-ssl-router” with the entry point port 443, rule "host(\`*insert your url here*\`)" and the service "influxdb-service", which is defined below.
 Now everything is set up so that the external monitoring should work.
